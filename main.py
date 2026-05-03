@@ -16,7 +16,7 @@ def index():
     if request.method == 'POST':
         statement_1 = request.form.get('statement_1')
         statement_2 = request.form.get('statement_2')
-        statement_3 = request.form.get('statement_3')
+        statement_3 = rwhaequest.form.get('statement_3')
         completion_ai = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[{"role": "user",
@@ -32,6 +32,6 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
 
